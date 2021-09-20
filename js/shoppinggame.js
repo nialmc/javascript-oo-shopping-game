@@ -19,7 +19,7 @@ const player = {
 }
 // Define the Product class - write the Constructor function for Product class here
 
-class Product { 
+var Product = { 
         constructor (id, name, price, expiryDate) {
             this.id = id,
             this.name = name,
@@ -33,9 +33,9 @@ class Product {
         const dateDiff = (date1, date2) => {   math.ceil(Math.abs(date1-date2)/(1000*60*60*24))   };
 
 // Here, use Object.defineProperty to create property - daysToExpire
-        Object.defineProperty(Product,daysToExpire,{ 
+        Object.defineProperty(Product,daysToExpire, { 
                                     value: "",
-                                    writeable:true,
+                                    writeable: true,
                                     get() {}
         } )
 
