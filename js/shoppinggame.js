@@ -34,7 +34,9 @@ class product {
 
 // Here, use Object.defineProperty to create property - daysToExpire
         Object.defineProperty(product,daysToExpire,{ 
-                                    get daysToExpire() {return this.daysToExpire}
+                                    value: "",
+                                    writeable:true,
+                                    get() {}
         } )
 
         
