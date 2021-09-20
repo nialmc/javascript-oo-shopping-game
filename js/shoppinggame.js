@@ -19,7 +19,7 @@ const player = {
 }
 // Define the Product class - write the Constructor function for Product class here
 
-class product { 
+class Product { 
         constructor (id, name, price, expiryDate) {
             this.id = id,
             this.name = name,
@@ -33,7 +33,7 @@ class product {
         const dateDiff = (date1, date2) => {   math.ceil(Math.abs(date1-date2)/(1000*60*60*24))   };
 
 // Here, use Object.defineProperty to create property - daysToExpire
-        Object.defineProperty(product,daysToExpire,{ 
+        Object.defineProperty(Product,daysToExpire,{ 
                                     value: "",
                                     writeable:true,
                                     get() {}
@@ -49,7 +49,7 @@ class product {
 
 class MagicProduct{ 
     constructor (id, name, price, expiryDate, points, isBonus) {
-        product.call (this, id, name, price, expiryDate);
+        Product.call (this, id, name, price, expiryDate);
     
         this.points = points,
         this.isBonus = isBonus
@@ -58,7 +58,7 @@ class MagicProduct{
 }
 
 // Establish inheritance between Product() & MagicProduct() here
-MagicProduct.prototype = Object.create(product.prototype)
+MagicProduct.prototype = Object.create(Product.prototype)
 
 
 // Define Rating class here
