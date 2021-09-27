@@ -18,23 +18,23 @@ const player = {
 }
 // Define the Product class - write the Constructor function for Product class here
 
- function Product  (id, name, price, expiryDate) {
+function Product (id, name, price, expiryDate) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.expiryDate = expiryDate;
     
     // Add method getDetails to Product here
-     function getDetails() {return `Product Name: ${this.name} , Product Price: ${this.price}`;};
-};
+     Product.prototype.getDetails = function() {return `Product Name: ${this.name} , Product Price: ${this.price}`;};
+}
 
  
 // Complete the dateDiff function
-        const dateDiff = (date1, date2) => {  return  Math.ceil(Math.abs(date1.getTime()-date2.getTime())/(1000*60*60*24))   };
+        const dateDiff = (date1, date2) => { return   Math.ceil(Math.abs(date1.getTime()-date2.getTime())/(1000*60*60*24))   };
 
 // Here, use Object.defineProperty to create property - daysToExpire
-        Object.defineProperty(Product,"daysToExpire", { 
-                  get() { return dateDiff(this.expiryDate, new Date() ); }
+        Object.defineProperty(Product.prototype,"daysToExpire", { 
+                  get : function() { return dateDiff(this.expiryDate, new Date() ); }
           
         } );
 
